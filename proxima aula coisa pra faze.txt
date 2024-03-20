@@ -1,0 +1,2 @@
+aula retrasada = metodo nos dto la
+aula passada = controller metodo converter(se tive chave estrangera nao faz)
