@@ -20,6 +20,8 @@ public class LocalidadeDTO {
     public static LocalidadeDTO create(Localidade localidade) {
         ModelMapper modelMapper = new ModelMapper();
         LocalidadeDTO dto = modelMapper.map(localidade, LocalidadeDTO.class);
+        dto.uf = localidade.getUf();
+        dto.cidade = localidade.getCidade();
         return dto;
     }
 }

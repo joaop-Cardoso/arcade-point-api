@@ -1,2 +1,2 @@
-aula retrasada = metodo nos dto la
+arruma os dto modelmapper create 
 aula passada = controller metodo converter(se tive chave estrangera nao faz)

@@ -1,7 +1,9 @@
 package com.example.arcadepointapi.api.dto;
 
 import com.example.arcadepointapi.model.entity.Anuncio;
+import com.example.arcadepointapi.model.entity.Localidade;
 import com.example.arcadepointapi.model.entity.Pessoa;
+import com.example.arcadepointapi.model.entity.Telefone;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,12 +24,21 @@ public class PessoaDTO {
     private String complemento;
     private String bairro;
     private String cep;
-    private TelefoneDTO telefone;
-    private LocalidadeDTO localidade;
+    private Telefone telefone;
+    private Localidade localidade;
 
     public static PessoaDTO create(Pessoa pessoa) {
         ModelMapper modelMapper = new ModelMapper();
         PessoaDTO dto = modelMapper.map(pessoa, PessoaDTO.class);
+        dto.adm = pessoa.isAdm();
+        dto.cpf = pessoa.getCpf();
+        dto.nome = pessoa.getNome();
+        dto.logradouro = pessoa.getLogradouro();
+        dto.numero = pessoa.getNumero();
+        dto.complemento = pessoa.getComplemento();
+        dto.bairro = pessoa.getBairro();
+        dto.cep = pessoa.getCep();
+        dto.telefone = pessoa.getTelefone();
         return dto;
     }
 }

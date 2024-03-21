@@ -20,6 +20,7 @@ public class MarcaDTO {
     public static MarcaDTO create(Marca marca) {
         ModelMapper modelMapper = new ModelMapper();
         MarcaDTO dto = modelMapper.map(marca, MarcaDTO.class);
+        dto.nome = marca.getNome();
         return dto;
     }
 }

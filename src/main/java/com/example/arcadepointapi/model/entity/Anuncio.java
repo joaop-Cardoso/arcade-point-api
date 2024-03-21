@@ -17,6 +17,7 @@ public class Anuncio {
     private Long id;
 
     private Float valor;
+
     @ManyToOne
     private Produto produto;
 }

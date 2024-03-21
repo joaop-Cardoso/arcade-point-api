@@ -20,6 +20,7 @@ public class TelefoneDTO {
     public static TelefoneDTO create(Telefone telefone) {
         ModelMapper modelMapper = new ModelMapper();
         TelefoneDTO dto = modelMapper.map(telefone, TelefoneDTO.class);
+        dto.telefone = telefone.getTelefone();
         return dto;
     }
 }

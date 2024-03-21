@@ -22,6 +22,7 @@ public class ConservacaoDTO {
     public static ConservacaoDTO create(Conservacao conservacao) {
         ModelMapper modelMapper = new ModelMapper();
         ConservacaoDTO dto = modelMapper.map(conservacao, ConservacaoDTO.class);
+        dto.estado = conservacao.getEstado();
         return dto;
     }
 }

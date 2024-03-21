@@ -23,6 +23,7 @@ public class CategoriaProdutosDTO {
     public static CategoriaProdutosDTO create(CategoriaProdutos categoriaProdutos) {
         ModelMapper modelMapper = new ModelMapper();
         CategoriaProdutosDTO dto = modelMapper.map(categoriaProdutos, CategoriaProdutosDTO.class);
+        dto.categoria = categoriaProdutos.getCategoria();
         return dto;
     }
 }

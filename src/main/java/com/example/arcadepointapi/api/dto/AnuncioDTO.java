@@ -2,6 +2,7 @@ package com.example.arcadepointapi.api.dto;
 
 
 import com.example.arcadepointapi.model.entity.Anuncio;
+import com.example.arcadepointapi.model.entity.Produto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,11 +20,13 @@ public class AnuncioDTO {
 
     private Float valor;
 
-    private ProdutoDTO produto;
+    private Produto produto;
 
     public static AnuncioDTO create(Anuncio anuncio) {
         ModelMapper modelMapper = new ModelMapper();
         AnuncioDTO dto = modelMapper.map(anuncio, AnuncioDTO.class);
+        dto.valor = anuncio.getValor();
+        dto.produto = anuncio.getProduto();
         return dto;
     }
 }

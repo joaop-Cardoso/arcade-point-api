@@ -1,7 +1,6 @@
 package com.example.arcadepointapi.api.dto;
 
-import com.example.arcadepointapi.model.entity.Anuncio;
-import com.example.arcadepointapi.model.entity.Produto;
+import com.example.arcadepointapi.model.entity.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,21 +14,27 @@ public class ProdutoDTO {
 
     private Long id;
 
-    private PessoaDTO pessoa;
+    private Pessoa pessoa;
 
     private String nome;
 
     private String descricao;
 
-    private ConservacaoDTO conservacao;
+    private Conservacao conservacao;
 
-    private MarcaDTO marca;
+    private Marca marca;
 
-    private CategoriaProdutosDTO categoria;
+    private CategoriaProdutos categoria;
 
     public static ProdutoDTO create(Produto produto) {
         ModelMapper modelMapper = new ModelMapper();
         ProdutoDTO dto = modelMapper.map(produto, ProdutoDTO.class);
+        dto.pessoa = produto.getPessoa();
+        dto.nome = produto.getNome();
+        dto.descricao = produto.getDescricao();
+        dto.conservacao = produto.getConservacao();
+        dto.marca = produto.getMarca();
+        dto.categoria = produto.getCategoria();
         return dto;
     }
 }
