@@ -1,2 +1,2 @@
 arruma os dto modelmapper create 
-aula passada = controller metodo converter(se tive chave estrangera nao faz)
+controller metodo converter(fiz o basico)
