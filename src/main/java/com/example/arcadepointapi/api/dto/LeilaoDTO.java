@@ -22,7 +22,7 @@ public class LeilaoDTO {
 
 
     private Long id;
-    private Produto produto;
+    private Long idProduto;
     private Float valorInicial;
     private Float valorIncremental;
     private Date dataInicio;
@@ -33,7 +33,6 @@ public class LeilaoDTO {
     public static LeilaoDTO create(Leilao leilao) {
         ModelMapper modelMapper = new ModelMapper();
         LeilaoDTO dto = modelMapper.map(leilao, LeilaoDTO.class);
-        dto.produto = leilao.getProduto();
         dto.valorInicial = leilao.getValorInicial();
         dto.valorIncremental = leilao.getValorIncremental();
         dto.dataInicio = leilao.getDataInicio();

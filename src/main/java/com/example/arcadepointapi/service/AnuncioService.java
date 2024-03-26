@@ -1,6 +1,6 @@
-package com.example.arcadepointapi.api.dto;
+package com.example.arcadepointapi.service;
 
-import com.example.arcadepointapi.exception.RegraNegocioException;
+
 import com.example.arcadepointapi.model.entity.*;
 import com.example.arcadepointapi.model.repository.AnuncioRepository;
 import org.springframework.stereotype.Service;
@@ -25,4 +25,4 @@ public class AnuncioService {
 
     public Optional<Anuncio> getAnuncioById(Long id) {
         return repository.findById(id);
-    }
+    }}

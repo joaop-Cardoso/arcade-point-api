@@ -1,2 +1,5 @@
 arruma os dto modelmapper create 
 controller metodo converter(fiz o basico)
+
+
+ARRUMA O CONVERTER TA FALANO Q TA ESTATICO SO FIZ O ANUNCIOCONTROLLER

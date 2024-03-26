@@ -20,13 +20,14 @@ public class AnuncioDTO {
 
     private Float valor;
 
-    private Produto produto;
+    private Long idProduto;
+
+
 
     public static AnuncioDTO create(Anuncio anuncio) {
         ModelMapper modelMapper = new ModelMapper();
         AnuncioDTO dto = modelMapper.map(anuncio, AnuncioDTO.class);
         dto.valor = anuncio.getValor();
-        dto.produto = anuncio.getProduto();
         return dto;
     }
 }

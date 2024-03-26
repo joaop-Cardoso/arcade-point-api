@@ -16,13 +16,12 @@ public class ProcuraDTO {
 
     private Long id;
     private Float valorAprox;
-    private Produto produto;
+    private Long idProduto;
 
     public static ProcuraDTO create(Procura procura) {
         ModelMapper modelMapper = new ModelMapper();
         ProcuraDTO dto = modelMapper.map(procura, ProcuraDTO.class);
         dto.valorAprox = procura.getValorAprox();
-        dto.produto = procura.getProduto();
         return dto;
     }
 }

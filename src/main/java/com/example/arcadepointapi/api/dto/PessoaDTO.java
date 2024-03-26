@@ -24,8 +24,8 @@ public class PessoaDTO {
     private String complemento;
     private String bairro;
     private String cep;
-    private Telefone telefone;
-    private Localidade localidade;
+    private Long idTelefone;
+    private Long idLocalidade;
 
     public static PessoaDTO create(Pessoa pessoa) {
         ModelMapper modelMapper = new ModelMapper();
@@ -38,7 +38,6 @@ public class PessoaDTO {
         dto.complemento = pessoa.getComplemento();
         dto.bairro = pessoa.getBairro();
         dto.cep = pessoa.getCep();
-        dto.telefone = pessoa.getTelefone();
         return dto;
     }
 }

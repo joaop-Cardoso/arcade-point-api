@@ -14,27 +14,23 @@ public class ProdutoDTO {
 
     private Long id;
 
-    private Pessoa pessoa;
+    private Long idPessoa;
 
     private String nome;
 
     private String descricao;
 
-    private Conservacao conservacao;
+    private Long idConservacao;
 
-    private Marca marca;
+    private Long idMarca;
 
-    private CategoriaProdutos categoria;
+    private Long idCategoriaProdutos;
 
     public static ProdutoDTO create(Produto produto) {
         ModelMapper modelMapper = new ModelMapper();
         ProdutoDTO dto = modelMapper.map(produto, ProdutoDTO.class);
-        dto.pessoa = produto.getPessoa();
         dto.nome = produto.getNome();
         dto.descricao = produto.getDescricao();
-        dto.conservacao = produto.getConservacao();
-        dto.marca = produto.getMarca();
-        dto.categoria = produto.getCategoria();
         return dto;
     }
 }
